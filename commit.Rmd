@@ -2,3 +2,13 @@
 output: github_document
 ---
 
+```{r}
+# location_list <- clipr::read_clip()
+location_list
+location_list %>% 
+    file.path("..",.,"docs/Gemfile.lock") %>% 
+    # file.exists()
+    map(~file.copy(from = "docs/Gemfile.lock", to = .,overwrite = TRUE))
+```
+
+
